@@ -14,6 +14,11 @@ public class LoginController {
 		return "login";
 	}	
 	
+	@GetMapping({"/home"})
+	public String home() {
+		return "home";
+	}
+	
 	@GetMapping({"/login-error"})
 	public String loginError(ModelMap model) {
 		model.addAttribute("alerta", "erro");
