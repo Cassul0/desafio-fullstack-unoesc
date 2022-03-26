@@ -6,18 +6,29 @@ import javax.persistence.*;
 @Table(name = "USUARIO")
 public class Usuario {
 	
-	@Column(name = "nomeUsuario", unique = true, nullable = false)
-	private String nome;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id_usuario;
+	
+	@Column(name = "username", unique = true, nullable = false)
+	private String username;
 	
 	@Column(name = "senha", nullable = false)
 	private String senha;
 
-	public String getNome() {
-		return nome;
+	public Long getId_usuario() {
+		return id_usuario;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setId_usuario(Long id_usuario) {
+		this.id_usuario = id_usuario;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getSenha() {
