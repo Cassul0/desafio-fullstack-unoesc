@@ -13,7 +13,14 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<ul class="navbar-nav mr-auto">				
+				<ul class="navbar-nav mr-auto">			
+					<li class="nav-item dropdown"><a
+						class="btn btn-dark dropdown-toggle" href="#" id="dropdown01"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Benefícios por Município</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown01">
+							<a class="dropdown-item" th:href="@{/consultaAPI/consultar}">Consultar API</a> 
+						</div>
+					</li>			
 				</ul>
 				<form th:action="@{/logout}" sec:authorize="isAuthenticated()"
 					  method="post"  class="form-inline mt-2 mt-md-0">
