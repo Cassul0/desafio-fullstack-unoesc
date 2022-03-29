@@ -44,11 +44,10 @@
 			  <p th:text="${texto}"></p>
 			</div>
 		</div>
-
 		<div class="form-label-group">
 			<input type="text" id="inputEmail" class="form-control"
 				placeholder="Email address" name="username" required autofocus>
-			<label for="inputEmail">Email</label>
+			<label for="inputEmail">Username</label>
 		</div>
 
 		<div class="form-label-group">
@@ -59,6 +58,9 @@
 
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
 		<hr>
+		<nav class="nav nav-pills flex-column flex-sm-row">
+			<a class="flex-sm-fill text-sm-left nav-link text-decoration-none" th:href="@{/usuarios/cadastrar}"><i class="far fa-arrow-alt-circle-right"></i>Cadastrar Usuário</a>
+		</nav>
 		<p class="mt-5 mb-3 text-muted text-center">Desafio Programador UNOESC - Gabriel&copy; 2022</p>
 	</form>
 </body>

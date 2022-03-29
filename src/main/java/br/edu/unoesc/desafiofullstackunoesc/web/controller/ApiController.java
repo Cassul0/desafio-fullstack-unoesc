@@ -29,11 +29,13 @@ public class ApiController {
 
         while ((output = buffer.readLine()) != null) {
 
+        	
             System.out.println(output);
+            
 
         }
 
         connection.disconnect();
-        return "sucess";
+        return "consultaAPI";
 	}
 }

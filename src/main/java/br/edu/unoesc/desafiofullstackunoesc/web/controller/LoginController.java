@@ -14,13 +14,9 @@ public class LoginController {
 		return "login";
 	}	
 	
-	@GetMapping({"/home"})
-	public String home() {
-		return "home";
-	}
-	
 	@GetMapping({"/login-error"})
 	public String loginError(ModelMap model) {
+		
 		model.addAttribute("alerta", "erro");
 		model.addAttribute("titulo", "Crendenciais inválidas!");
 		model.addAttribute("texto", "Login ou senha incorretos, tente novamente.");
