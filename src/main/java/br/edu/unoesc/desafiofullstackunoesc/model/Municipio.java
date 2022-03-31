@@ -2,12 +2,10 @@ package br.edu.unoesc.desafiofullstackunoesc.model;
 
 import javax.persistence.*;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "MUNICIPIO")
-public class Municipio {
-
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_municipio;
+public class Municipio extends AbstractEntity<Long>{
 	
 	@Column(name = "codIBGE", nullable = false)
 	private Long codIBGE;
@@ -27,14 +25,6 @@ public class Municipio {
 	@ManyToOne
 	@JoinColumn(name = "FK_UNIDADEFEDERATIVA_ID")
 	private UnidadeFederativa id_UF;
-
-	public Long getId_municipio() {
-		return id_municipio;
-	}
-
-	public void setId_municipio(Long id_municipio) {
-		this.id_municipio = id_municipio;
-	}
 
 	public Long getCodIBGE() {
 		return codIBGE;

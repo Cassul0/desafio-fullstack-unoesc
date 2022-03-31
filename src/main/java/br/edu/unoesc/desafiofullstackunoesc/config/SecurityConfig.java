@@ -7,14 +7,13 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import br.edu.unoesc.desafiofullstackunoesc.service.UsuarioService;
+import br.edu.unoesc.desafiofullstackunoesc.service.UserService;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
-	private UsuarioService service;
-	
+	private UserService service;
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -22,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 			// acessos públicos liberados
 			.antMatchers("/webjars/**", "/css/**", "/js/**").permitAll()//libera acesso aos recursos
-			.antMatchers("/", "/login", "/usuarios/cadastrar").permitAll()
+			.antMatchers("/", "/login", "/usuarios/cadastrar", "/usuarios/salvar").permitAll()
 			.anyRequest().authenticated()
 			.and()
 				.formLogin()

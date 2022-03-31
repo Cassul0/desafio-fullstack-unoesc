@@ -4,11 +4,15 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	th:with="version=${#strings.randomAlphanumeric(3)}">
 <head>
-<title>Desafio Dev UNOESC</title>
+<title>Clínica Spring Security</title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="clínica médica com agendamento de consultas online" />
+<meta name="author" content="ballem" />
+<link rel="icon" th:href="@{/image/favicon.ico}" />
+
 <!-- Bootstrap core CSS -->
 <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css(v=${version}) }" rel="stylesheet" />
 <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
@@ -28,13 +32,15 @@
 
 	<div class="layout-main">	
 		<section layout:fragment="corpo">		
+			<div>conteudo principal das páginas</div>
 		</section>		
 	</div>
 
 	<footer th:replace="fragments/footer :: rodape">
 		<div>footer</div>
 	</footer>
-	
+
+
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
@@ -48,9 +54,6 @@
 	<script	src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 	<script	src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 	<script	src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
-	<!-- 	MEUS JS -->
-	<script th:replace=":: js"></script>	
-	<script th:replace=":: inlinescript" th:inline="javascript"></script>
 
 	<script type="text/javascript">
 		$(function() {
