@@ -8,14 +8,22 @@ import java.net.URL;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.edu.unoesc.desafiofullstackunoesc.model.DadosAPI;
+
 @Controller
-@RequestMapping("/consultaAPI")
+@RequestMapping("/api")
 public class ApiController {
 		
-	@GetMapping("/consultar")
-	public String listar() throws IOException {
+	@GetMapping("/consulta")
+	public String listar(){
+		return "API/consulta";
+	}
+	
+	@PostMapping("/consultar")
+	public String consultar(DadosAPI dadosApi) throws IOException {
 		
 		URL url = new URL("https://api.portaldatransparencia.gov.br/api-de-dados/auxilio-emergencial-beneficiario-por-municipio?codigoIbge=4209003&mesAno=202101&pagina=1");
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -36,6 +44,6 @@ public class ApiController {
         }
 
         connection.disconnect();
-        return "consultaAPI";
+        return "API/consulta";
 	}
 }

@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DesafioFullstackUnoescApplication {
 
 	public static void main(String[] args) {
-		//System.out.println(new BCryptPasswordEncoder().encode("admin"));
+		//System.out.println(new BCryptPasswordEncoder().encode("root"));
 
 		SpringApplication.run(DesafioFullstackUnoescApplication.class, args);
 	}

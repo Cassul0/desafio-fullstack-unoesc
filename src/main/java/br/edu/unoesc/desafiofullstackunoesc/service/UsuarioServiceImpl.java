@@ -7,6 +7,7 @@ import br.edu.unoesc.desafiofullstackunoesc.dao.UsuarioDao;
 import br.edu.unoesc.desafiofullstackunoesc.model.Usuario;
 
 public class UsuarioServiceImpl {
+	
 	@Autowired
 	private UsuarioDao dao;
 	

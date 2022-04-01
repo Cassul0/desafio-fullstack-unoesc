@@ -5,22 +5,12 @@
 	<meta charset="UTF-8"/>
 </head>
 <body>	
-	<section class="layout-content" layout:fragment="corpo">
-		<br><br><br><br><br><br>		
-        <nav class="navbar navbar-expand-md bg-light">
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <i class="oi oi-caret-right"></i>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="container" id="cadastro">
-        	<div th:replace="fragments/alert"></div>
-            <form th:action="@{/usuarios/salvar}" th:object="${usuario}" method="POST"> 	  
-                <div class="form-row">
-                    <div class="form-group col-md-6">
+	<section class="jumbotron text-center" layout:fragment="corpo">
+		<div class="container-fluid"> 
+	        <div class="container" id="cadastro">
+	        	<div th:replace="fragments/alert"></div>
+	            <form th:action="@{/usuarios/salvar}" th:object="${usuario}" method="POST"> 	  
+                    <div class="form-labelgroup col-md-6">
                         <label for="nome">Username</label>
                         <input type="text" class="form-control" id="nome" placeholder="Nome Usuario"
                          autofocus="autofocus" th:field="*{username}"/>
@@ -30,10 +20,10 @@
                         <input type="text" class="form-control" id="nome" placeholder="Senha"
                          autofocus="autofocus" th:field="*{senha}"/>
                     </div>
-                </div>
-                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
-            </form>
-        </div>
+	                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+	            </form>
+	        </div>
+  		</div>
     </section>
 </body>
 </html>		
