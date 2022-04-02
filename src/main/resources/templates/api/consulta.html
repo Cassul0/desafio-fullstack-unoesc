@@ -66,11 +66,14 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td colspan="2">
+										<tr th:each="d : ${dadosApi}">
+											<td th:text="${d.id}"></td>
+											<td th:text="${d.mesDisponibilizacao}"></td>
+											<td th:text="${d.codigoIBGE}"></td>
+											<td th:text="${d.nomeIBGE}"></td>
+											<td th:text="${d.regiao}"></td>
+											<td th:text="${d.pais}"></td>
+											<td th:text="${d.estado}"></td>
 											</td>
 										</tr>
 									</tbody>

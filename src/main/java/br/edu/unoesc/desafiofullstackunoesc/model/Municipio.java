@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "MUNICIPIO")
 public class Municipio extends AbstractEntity<Long>{
-	
+
 	@Column(name = "codigoIBGE", nullable = false)
 	private Long codigoIBGE;
 	
@@ -26,12 +26,12 @@ public class Municipio extends AbstractEntity<Long>{
 	@JoinColumn(name = "FK_UNIDADEFEDERATIVA_ID")
 	private UnidadeFederativa uf;
 
-	public Long getCodIBGE() {
+	public Long getCodigoIBGE() {
 		return codigoIBGE;
 	}
 
-	public void setCodIBGE(Long codIBGE) {
-		this.codigoIBGE = codIBGE;
+	public void setCodigoIBGE(Long codigoIBGE) {
+		this.codigoIBGE = codigoIBGE;
 	}
 
 	public String getNomeIBGE() {
@@ -46,8 +46,8 @@ public class Municipio extends AbstractEntity<Long>{
 		return codigoRegiao;
 	}
 
-	public void setCodRegiao(Long codRegiao) {
-		this.codigoRegiao = codRegiao;
+	public void setCodRegiao(Long codigoRegiao) {
+		this.codigoRegiao = codigoRegiao;
 	}
 
 	public String getNomeRegiao() {
@@ -71,7 +71,7 @@ public class Municipio extends AbstractEntity<Long>{
 	}
 
 	public void setId_UF(UnidadeFederativa id_UF) {
-		this.uf = uf;
+		this.uf = id_UF;
 	}
 	
 	
