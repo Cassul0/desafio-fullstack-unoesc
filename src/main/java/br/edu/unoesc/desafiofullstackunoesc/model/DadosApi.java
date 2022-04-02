@@ -2,7 +2,6 @@ package br.edu.unoesc.desafiofullstackunoesc.model;
 
 import javax.persistence.Column;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder("DadosAPI")

@@ -4,13 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Beneficiario {
 
-	@JsonIgnore
 	private String cpfFormatado;
 	
 	@JsonIgnore
 	private String nis;
 	
-	@JsonIgnore
 	private String nome;
 
 	public String getCpfFormatado() {

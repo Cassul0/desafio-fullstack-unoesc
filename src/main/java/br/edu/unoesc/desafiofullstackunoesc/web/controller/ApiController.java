@@ -53,7 +53,7 @@ public class ApiController {
         //DadosApi dados[] = mapper.readValue(buffer, DadosApi[].class);
         List<DadosApi> dados = Arrays.asList(mapper.readValue(buffer, DadosApi[].class));
         
-        
+        model.addAttribute("dados", dados);
         
         connection.disconnect();
         return "api/consulta";

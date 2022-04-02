@@ -2,7 +2,7 @@
 <html layout:decorate="~{layout}">
 
 <head>
-	<meta charset="UTF-8" />
+<meta charset="UTF-8" />
 </head>
 
 <body>
@@ -10,7 +10,7 @@
 		<main role="main">
 			<section class="jumbotron text-center">
 				<div class="container">
-					<h1 class="jumbotron-heading">LISTAGEM </h1>
+					<h1 class="jumbotron-heading">LISTAGEM</h1>
 					<p class="lead text-muted"></p>
 				</div>
 
@@ -19,29 +19,30 @@
 						<div class="row">
 							<div class="col-md-3">
 								<div class="form-group">
-									<label for="nome">Código IBGE</label>
-									<input type="text" maxlength="7" class="form-control" id="codIBGE"
-										placeholder="Codigo IBGE" autofocus="autofocus" th:name="(codIBGE)" required />
+									<label for="nome">Código IBGE</label> <input type="text"
+										maxlength="7" class="form-control" id="codIBGE"
+										placeholder="Codigo IBGE" autofocus="autofocus"
+										th:name="(codIBGE)" required />
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
-									<label for="nome">Ano de referência</label>
-									<input type="text" maxlength="4" class="form-control" id="anoRef"
+									<label for="nome">Ano de referência</label> <input type="text"
+										maxlength="4" class="form-control" id="anoRef"
 										placeholder="Ano Referência" th:name="(anoRef)" required />
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
-									<label for="nome">Mês de referência</label>
-									<input type="text" minlength="2" maxlength="2" class="form-control" id="mesRef"
+									<label for="nome">Mês de referência</label> <input type="text"
+										minlength="2" maxlength="2" class="form-control" id="mesRef"
 										placeholder="Mes Referência" th:name="(mesRef)" required />
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
-									<label for="nome">Quantidade de paginas</label>
-									<input type="text" maxlength="3" class="form-control" id="pagina"
+									<label for="nome">Quantidade de paginas</label> <input
+										type="text" maxlength="3" class="form-control" id="pagina"
 										placeholder="Página" th:name="(pagina)" required />
 								</div>
 							</div>
@@ -50,43 +51,46 @@
 					</form>
 				</div>
 				<div class="container" id="listagem">
-					<div class="table-responsive">
-						<table class="table table-striped table-hover table-sm">
-							<div class="table-responsive">
-								<table class="table table-striped table-hover table-sm">
-									<thead>
-										<tr>
-											<th>#Id</th>
-											<th>Mes Disponibilização</th>
-											<th>Código IBGE</th>
-											<th>Nome IBGE</th>
-											<th>Regiao</th>
-											<th>Pais</th>
-											<th>Estado</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr th:each="d : ${dadosApi}">
-											<td th:text="${d.id}"></td>
-											<td th:text="${d.mesDisponibilizacao}"></td>
-											<td th:text="${d.codigoIBGE}"></td>
-											<td th:text="${d.nomeIBGE}"></td>
-											<td th:text="${d.regiao}"></td>
-											<td th:text="${d.pais}"></td>
-											<td th:text="${d.estado}"></td>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</table>
-					</div>
+					<table class="table table-striped table-hover" id="beneficiarios">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Mes Disponibilização</th>
+								<th>Nome Pessoa</th>
+								<th>Cpf</th>
+								<th>Código IBGE</th>
+								<th>Nome IBGE</th>
+								<th>Regiao</th>
+								<th>Pais</th>
+								<th>Estado</th>
+								<th>Valor</th>
+								<th>Numero da parcela</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="d : ${dados}">
+								<td th:text="${d.id}"></td>
+								<td th:text="${d.mesDisponibilizacao}"></td>
+								<td th:text="${d.beneficiario.nome}"></td>
+								<td th:text="${d.beneficiario.cpfFormatado}"></td>
+								<td th:text="${d.municipio.codigoIBGE}"></td>
+								<td th:text="${d.municipio.nomeIBGE}"></td>
+								<td th:text="${d.municipio.nomeRegiao}"></td>
+								<td th:text="${d.municipio.pais}"></td>
+								<td th:text="${d.municipio.uf.sigla}"></td>
+								<td th:text="${d.valor}"></td>
+								<td th:text="${d.numeroParcela}"></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</section>
 		</main>
 	</section>
-	<script th:src="~{}" th:fragment="js"></script>
-	<script th:inline="javascript" th:fragment="inlinescript"></script>
 </body>
-
+<script>
+	$(document).load(function() {
+		var tabela = $('#beneficiarios').DataTable();
+	});
+</script>
 </html>
