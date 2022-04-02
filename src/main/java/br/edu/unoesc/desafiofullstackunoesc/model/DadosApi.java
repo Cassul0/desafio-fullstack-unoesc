@@ -11,40 +11,46 @@ public class DadosApi {
 	@Column(name = "id", nullable = false)
 	private Long id;
 	
-	@JsonIgnore
-	@Column(name = "beneficiario", nullable = false)
-	private String beneficiario;
-	
-	@JsonIgnore
-	@Column(name = "responsavelAuxilioEmergencial", nullable = false)
-	private String responsavelAuxilioEmergencial;
-
 	@Column(name = "mesDisponibilizacao")
 	private String mesDisponibilizacao;
 	
-	@Column(name = "codigoIBGE", nullable = false)
-	private Long codigoIBGE;
+	@Column(name = "beneficiario", nullable = false)
+	private Beneficiario beneficiario;
+	
+	@Column(name = "responsavelAuxilioEmergencial", nullable = false)
+	private ResponsavelAuxilioEmergencial responsavelAuxilioEmergencial;
 
-	@JsonIgnore
 	@Column(name = "municipio")
 	private Municipio municipio;
 	
-	@JsonIgnore
 	@Column(name = "situacaoAuxilioEmergencial")
 	private String situacaoAuxilioEmergencial;
 
-	@JsonIgnore
 	@Column(name = "enquadramentoAuxilioEmergencial")
 	private String enquadramentoAuxilioEmergencial;
 	
-	@JsonIgnore
 	@Column(name = "valor")
 	private String valor;
 	
-	@JsonIgnore
 	@Column(name = "numeroParcela")
 	private String numeroParcela;
 	
+	public Beneficiario getBeneficiario() {
+		return beneficiario;
+	}
+
+	public void setBeneficiario(Beneficiario beneficiario) {
+		this.beneficiario = beneficiario;
+	}
+
+	public ResponsavelAuxilioEmergencial getResponsavelAuxilioEmergencial() {
+		return responsavelAuxilioEmergencial;
+	}
+
+	public void setResponsavelAuxilioEmergencial(ResponsavelAuxilioEmergencial responsavelAuxilioEmergencial) {
+		this.responsavelAuxilioEmergencial = responsavelAuxilioEmergencial;
+	}
+
 	public String getNumeroParcela() {
 		return numeroParcela;
 	}
@@ -77,22 +83,6 @@ public class DadosApi {
 		this.situacaoAuxilioEmergencial = situacaoAuxilioEmergencial;
 	}
 
-	public String getResponsavelAuxilioEmergencial() {
-		return responsavelAuxilioEmergencial;
-	}
-
-	public void setResponsavelAuxilioEmergencial(String responsavelAuxilioEmergencial) {
-		this.responsavelAuxilioEmergencial = responsavelAuxilioEmergencial;
-	}
-
-	public String getBeneficiario() {
-		return beneficiario;
-	}
-
-	public void setBeneficiario(String beneficiario) {
-		this.beneficiario = beneficiario;
-	}
-
 	public Long getId() {
 		return id;
 	}
@@ -109,14 +99,6 @@ public class DadosApi {
 		this.mesDisponibilizacao = mesDisponibilizacao;
 	}
 
-	public Long getCodigoIBGE() {
-		return codigoIBGE;
-	}
-
-	public void setCodigoIBGE(Long codigoIBGE) {
-		this.codigoIBGE = codigoIBGE;
-	}
-
 	public Municipio getMunicipio() {
 		return municipio;
 	}
@@ -124,4 +106,14 @@ public class DadosApi {
 	public void setMunicipio(Municipio municipio) {
 		this.municipio = municipio;
 	}
+
+	@Override
+	public String toString() {
+		return "DadosApi [id=" + id + ", mesDisponibilizacao=" + mesDisponibilizacao + ", beneficiario=" + beneficiario
+				+ ", responsavelAuxilioEmergencial=" + responsavelAuxilioEmergencial + ", municipio=" + municipio
+				+ ", situacaoAuxilioEmergencial=" + situacaoAuxilioEmergencial + ", enquadramentoAuxilioEmergencial="
+				+ enquadramentoAuxilioEmergencial + ", valor=" + valor + ", numeroParcela=" + numeroParcela + "]";
+	}
+	
+	
 }

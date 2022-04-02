@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,18 +48,13 @@ public class ApiController {
         connection.setRequestProperty("chave-api-dados", "82057c21c09ff20cd18e7257b4a55804");
         
         BufferedReader buffer = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        String output;
-
-   //     while ((output = buffer.readLine()) != null) {
-     //       System.out.println(output);
-    //    }
-        ObjectMapper mapper = new ObjectMapper();
-        DadosApi dados[] = mapper.readValue(buffer, DadosApi[].class);
-        //mapper.writeValue(new File("target/dados.json"), output);
-
         
-        model.addAttribute("d", dados);
-
+        ObjectMapper mapper = new ObjectMapper();
+        //DadosApi dados[] = mapper.readValue(buffer, DadosApi[].class);
+        List<DadosApi> dados = Arrays.asList(mapper.readValue(buffer, DadosApi[].class));
+        
+        
+        
         connection.disconnect();
         return "api/consulta";
 	}

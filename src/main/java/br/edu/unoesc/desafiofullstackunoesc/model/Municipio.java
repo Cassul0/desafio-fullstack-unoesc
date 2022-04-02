@@ -70,8 +70,30 @@ public class Municipio extends AbstractEntity<Long>{
 		return uf;
 	}
 
+	public Long getCodigoRegiao() {
+		return codigoRegiao;
+	}
+
+	public void setCodigoRegiao(Long codigoRegiao) {
+		this.codigoRegiao = codigoRegiao;
+	}
+
+	public UnidadeFederativa getUf() {
+		return uf;
+	}
+
+	public void setUf(UnidadeFederativa uf) {
+		this.uf = uf;
+	}
+
 	public void setId_UF(UnidadeFederativa id_UF) {
 		this.uf = id_UF;
+	}
+
+	@Override
+	public String toString() {
+		return "Municipio [codigoIBGE=" + codigoIBGE + ", nomeIBGE=" + nomeIBGE + ", codigoRegiao=" + codigoRegiao
+				+ ", nomeRegiao=" + nomeRegiao + ", pais=" + pais + ", uf=" + uf + "]";
 	}
 	
 	
