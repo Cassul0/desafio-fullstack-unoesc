@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class UnidadeFederativa {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_unidadeFederativa;
+	private Long id;
 	
 	@Column(name = "sigla", nullable = false)
 	private String sigla;
@@ -16,11 +16,11 @@ public class UnidadeFederativa {
 	private String nome;
 
 	public Long getId_unidadeFederativa() {
-		return id_unidadeFederativa;
+		return id;
 	}
 
-	public void setId_unidadeFederativa(Long id_unidadeFederativa) {
-		this.id_unidadeFederativa = id_unidadeFederativa;
+	public void setId_unidadeFederativa(Long id) {
+		this.id = id;
 	}
 
 	public String getSigla() {

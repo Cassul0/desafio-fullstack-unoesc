@@ -7,14 +7,14 @@ import javax.persistence.*;
 @Table(name = "MUNICIPIO")
 public class Municipio extends AbstractEntity<Long>{
 	
-	@Column(name = "codIBGE", nullable = false)
-	private Long codIBGE;
+	@Column(name = "codigoIBGE", nullable = false)
+	private Long codigoIBGE;
 	
 	@Column(name = "nomeIBGE", nullable = false)
 	private String nomeIBGE;
 
-	@Column(name = "codRegiao", nullable = false)
-	private Long codRegiao;
+	@Column(name = "codigoRegiao", nullable = false)
+	private Long codigoRegiao;
 	
 	@Column(name = "nomeRegiao", nullable = false)
 	private String nomeRegiao;
@@ -24,14 +24,14 @@ public class Municipio extends AbstractEntity<Long>{
 	
 	@ManyToOne
 	@JoinColumn(name = "FK_UNIDADEFEDERATIVA_ID")
-	private UnidadeFederativa id_UF;
+	private UnidadeFederativa uf;
 
 	public Long getCodIBGE() {
-		return codIBGE;
+		return codigoIBGE;
 	}
 
 	public void setCodIBGE(Long codIBGE) {
-		this.codIBGE = codIBGE;
+		this.codigoIBGE = codIBGE;
 	}
 
 	public String getNomeIBGE() {
@@ -43,11 +43,11 @@ public class Municipio extends AbstractEntity<Long>{
 	}
 
 	public Long getCodRegiao() {
-		return codRegiao;
+		return codigoRegiao;
 	}
 
 	public void setCodRegiao(Long codRegiao) {
-		this.codRegiao = codRegiao;
+		this.codigoRegiao = codRegiao;
 	}
 
 	public String getNomeRegiao() {
@@ -67,11 +67,11 @@ public class Municipio extends AbstractEntity<Long>{
 	}
 
 	public UnidadeFederativa getId_UF() {
-		return id_UF;
+		return uf;
 	}
 
 	public void setId_UF(UnidadeFederativa id_UF) {
-		this.id_UF = id_UF;
+		this.uf = uf;
 	}
 	
 	

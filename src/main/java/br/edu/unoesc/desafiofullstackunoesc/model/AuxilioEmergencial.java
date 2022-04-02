@@ -8,27 +8,30 @@ import javax.persistence.*;
 public class AuxilioEmergencial {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_auxEmergencial;
+	private Long id;
 	
 	@Column(name = "dataConsulta")
 	private Date dataConsulta;
 	
+	@Column(name = "mesDisponibilizacao")
+	private String mesDisponibilizacao;
+	
 	@ManyToOne
 	@JoinColumn(name = "FK_MUNICIPIO_ID")
 	private UnidadeFederativa id_UF;
-	
+
 	@Column(name = "numeroParcela")
 	private String numeroParcela;
 	
 	@Column(name = "valorTotal")
 	private BigDecimal valorTotal;
 
-	public Long getId_auxEmergencial() {
-		return id_auxEmergencial;
+	public Long getId() {
+		return id;
 	}
 
-	public void setId_auxEmergencial(Long id_auxEmergencial) {
-		this.id_auxEmergencial = id_auxEmergencial;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public Date getDataConsulta() {
@@ -37,6 +40,14 @@ public class AuxilioEmergencial {
 
 	public void setDataConsulta(Date dataConsulta) {
 		this.dataConsulta = dataConsulta;
+	}
+	
+	public String getMesDisponibilizacao() {
+		return mesDisponibilizacao;
+	}
+
+	public void setMesDisponibilizacao(String mesDisponibilizacao) {
+		this.mesDisponibilizacao = mesDisponibilizacao;
 	}
 
 	public UnidadeFederativa getId_UF() {
