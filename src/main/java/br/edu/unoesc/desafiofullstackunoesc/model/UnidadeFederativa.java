@@ -4,24 +4,13 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "UNIDADEFEDERATIVA")
-public class UnidadeFederativa {
+public class UnidadeFederativa extends AbstractEntity{
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
 	@Column(name = "sigla", nullable = false)
 	private String sigla;
 	
 	@Column(name = "nome", nullable = false)
 	private String nome;
-
-	public Long getId_unidadeFederativa() {
-		return id;
-	}
-
-	public void setId_unidadeFederativa(Long id) {
-		this.id = id;
-	}
 
 	public String getSigla() {
 		return sigla;

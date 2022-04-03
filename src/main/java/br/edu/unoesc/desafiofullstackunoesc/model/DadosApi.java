@@ -5,7 +5,7 @@ import javax.persistence.Column;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder("DadosAPI")
-public class DadosApi {
+public class DadosApi extends AbstractEntity{
 	
 	@Column(name = "id", nullable = false)
 	private Long id;

@@ -1,6 +1,9 @@
 package br.edu.unoesc.desafiofullstackunoesc.model;
 
-public class ResponsavelAuxilioEmergencial {
+import javax.persistence.Entity;
+
+@Entity
+public class ResponsavelAuxilioEmergencial extends AbstractEntity {
 
 	private String cpfFormatado;
 	

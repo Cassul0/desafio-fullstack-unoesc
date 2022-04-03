@@ -4,24 +4,13 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "USUARIO")
-public class Usuario {
+public class Usuario extends AbstractEntity{
 	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_usuario;
-	
-	@Column(name = "username", unique = true, nullable = false)
+	@Column(name = "username", nullable = false)
 	private String username;
 	
 	@Column(name = "senha", nullable = false, length = 255)
 	private String senha;
-
-	public Long getId_usuario() {
-		return id_usuario;
-	}
-
-	public void setId_usuario(Long id_usuario) {
-		this.id_usuario = id_usuario;
-	}
 
 	public String getUsername() {
 		return username;

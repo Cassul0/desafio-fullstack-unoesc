@@ -1,8 +1,11 @@
 package br.edu.unoesc.desafiofullstackunoesc.model;
 
+import javax.persistence.Entity;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class Beneficiario {
+@Entity
+public class Beneficiario extends AbstractEntity {
 
 	private String cpfFormatado;
 	

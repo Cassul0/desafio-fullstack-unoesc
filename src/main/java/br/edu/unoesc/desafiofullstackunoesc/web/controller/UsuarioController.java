@@ -1,8 +1,7 @@
 package br.edu.unoesc.desafiofullstackunoesc.web.controller;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,28 +11,24 @@ import br.edu.unoesc.desafiofullstackunoesc.model.Usuario;
 import br.edu.unoesc.desafiofullstackunoesc.service.UsuarioService;
 
 @Controller
-@RequestMapping("/usuarios")
+@RequestMapping("/")
 public class UsuarioController {
 
+	@Autowired
 	private UsuarioService service;
 
 	@GetMapping("/cadastrar")
 	public String cadastrar(Usuario usuario ) {
 		
-		return "usuario/cadastro";
+		return "cadastro";
 	}
 	
 	@PostMapping("/salvar")
-	public String salvar(Usuario usuario, BindingResult result, RedirectAttributes attr) {
-		if (result.hasErrors()) {
-			return "usuario/cadastro";
-		}
-		String senha = new String(new BCryptPasswordEncoder().encode(usuario.getSenha()));
-		usuario.setSenha(senha);
-		service.salvar(usuario);
-		attr.addFlashAttribute("success", "Cargo inserido com sucesso");
-		return "redirect:/usuario/cadastrar";
+	public String salvar(Usuario usuario, RedirectAttributes attr) {
+		
+		service.salvarUsuario(usuario);
+		attr.addFlashAttribute("sucesso", "Usuario inserido com sucesso");
+		return "redirect:/cadastrar";
 	}
-
 
 }

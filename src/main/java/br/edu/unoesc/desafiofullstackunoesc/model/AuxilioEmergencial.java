@@ -5,11 +5,9 @@ import java.util.Date;
 
 import javax.persistence.*;
 
-public class AuxilioEmergencial {
+@Entity
+public class AuxilioEmergencial extends AbstractEntity{
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
 	@Column(name = "dataConsulta")
 	private Date dataConsulta;
 	
@@ -25,14 +23,6 @@ public class AuxilioEmergencial {
 	
 	@Column(name = "valorTotal")
 	private BigDecimal valorTotal;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public Date getDataConsulta() {
 		return dataConsulta;
