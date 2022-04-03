@@ -50,4 +50,9 @@ Para auxílio, elaboramos um diagrama de classes simples, apenas com seus nomes 
 - Boas práticas de UI (Interface com o Usuário);
 - Sentido e coerência nas respostas aos questionamentos na entrevista de apresentação do desafio realizada pelo candidato.
 
-**Não esqueça de documentar o processo necessário para rodar a aplicação.**
+### DOCUMENTAÇÃO DO PROJETO
+
+- Ter instalado um banco de dados MySQL Workbench
+- Utiliazar a ferramenta Spring Tool Suite 4
+- Utilize o menu Boot Dashboard, para iniciar o projeto
+- Deverá criar um novo usuário pela tela de cadastro para ter acesso ao sistema
